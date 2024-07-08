@@ -84,13 +84,14 @@ document.querySelector('.js-place-order')
     const response = await fetch('https://supersimplebackend.dev/orders' , {
             method:'POST' ,
             headers: {
-              'Content-type': 'application/json'
+              'Content-Type': 'application/json'
             } ,
             body: JSON.stringify({
                 cart: cart
             })
          });
        const order = await response.json();
+       console.log(order);
        addOrder(order);
       } catch(error){
     console.log('unexpected error.');
